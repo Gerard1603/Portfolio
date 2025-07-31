@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
@@ -64,7 +65,6 @@
       display: inline-block;
       padding-bottom: 0.5rem;
     }
-
     .project {
     background-color: #fff0e0;
     border: 1px solid #800000;
@@ -74,11 +74,10 @@
     transition: transform 0.3s, box-shadow 0.3s;
     }
     .project:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 20px rgba(128, 0, 0, 0.3);
-    background-color: #fef5e6;
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(128, 0, 0, 0.3);
+      background-color: #fef5e6;
     }   
-
     footer {
       background-color: #800000;
       color: beige;
@@ -87,53 +86,68 @@
       margin-top: 2rem;
     }   
     .profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #800000;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #800000;
     } 
     .project-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem; 
+      display: flex;
+      align-items: center;
+      gap: 1rem; 
     }
     .NetNaut-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 5%;
-    border: 3px solid #800000;
-    object-fit: cover    
+      width: 150px;
+      height: 150px;
+      border-radius: 5%;
+      border: 3px solid #800000;
+      object-fit: cover;    
     }
     .Flappy-bird-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 5%;
-    border: 3px solid #800000;
-    object-fit: cover;  
+      width: 150px;
+      height: 150px;
+      border-radius: 5%;
+      border: 3px solid #800000;
+      object-fit: cover;  
     }
     .skills-list {
-    list-style: none;
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem 2rem;
-    font-size: 1.1rem;
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+      font-size: 1.1rem;
     }
     .skills-list li {
-    background-color: #fff0e0;
-    border: 1px solid #800000;
-     padding: 0.5rem 1rem;
-     border-radius: 6px;
-     font-weight: 500;
-    display: flex;
-     align-items: center;
-    gap: 0.5rem;
-     transition: background-color 0.3s, transform 0.2s;
+      background-color: #fff0e0;
+      border: 1px solid #800000;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s, transform 0.2s;
     }
     .skills-list li:hover {
-     background-color: #fce9d8;
-    transform: translateY(-2px);
+      background-color: #fce9d8;
+      transform: translateY(-2px);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #800000;
+      color: beige;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background-color: #a00000;
+      transform: scale(1.05);
     }
   </style>
 </head>
