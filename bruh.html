@@ -65,52 +65,53 @@
       display: inline-block;
       padding-bottom: 0.5rem;
     }
+
     .project {
-    background-color: #fff0e0;
-    border: 1px solid #800000;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #fff0e0;
+      border: 1px solid #800000;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .project:hover {
       transform: scale(1.03);
       box-shadow: 0 4px 20px rgba(128, 0, 0, 0.3);
       background-color: #fef5e6;
-    }   
+    }
+
     footer {
       background-color: #800000;
       color: beige;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
-    }   
+    }
+
     .profile-pic {
       width: 200px;
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #800000;
-    } 
+    }
+
     .project-container {
       display: flex;
       align-items: center;
       gap: 1rem; 
     }
-    .NetNaut-pic {
+
+    .NetNaut-pic,
+    .Flappy-bird-pic {
       width: 150px;
       height: 150px;
       border-radius: 5%;
       border: 3px solid #800000;
       object-fit: cover;    
     }
-    .Flappy-bird-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 5%;
-      border: 3px solid #800000;
-      object-fit: cover;  
-    }
+
     .skills-list {
       list-style: none;
       padding-left: 0;
@@ -119,6 +120,7 @@
       gap: 0.75rem 2rem;
       font-size: 1.1rem;
     }
+
     .skills-list li {
       background-color: #fff0e0;
       border: 1px solid #800000;
@@ -130,10 +132,12 @@
       gap: 0.5rem;
       transition: background-color 0.3s, transform 0.2s;
     }
+
     .skills-list li:hover {
       background-color: #fce9d8;
       transform: translateY(-2px);
     }
+
     .btn {
       display: inline-block;
       margin-top: 0.5rem;
@@ -145,9 +149,34 @@
       border-radius: 6px;
       transition: background-color 0.3s, transform 0.2s;
     }
+
     .btn:hover {
       background-color: #a00000;
       transform: scale(1.05);
+    }
+
+    /* 🎓 Certificates section styling */
+    #certificates {
+      margin-bottom: 3rem;
+    }
+
+    .certificate-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .certificate-img {
+      width: 250px;
+      height: auto;
+      border: 2px solid #800000;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .certificate-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(128, 0, 0, 0.3);
     }
   </style>
 </head>
@@ -158,7 +187,8 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>   
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li> <!-- 🔥 Added Certificates nav link -->
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -166,72 +196,74 @@
 
   <main>
     <section id="about">
-  <h2>About Me</h2>
-  <div>
-  <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
-<p style="font-size: 20px; font-family: 'Poppins', sans-serif;">Hello! I'm Gerard Cordovez, a simple web developer. I have a passion for creating beautiful and functional websites. I enjoy learning new technologies and improving my skills in web development.
-    I am currently working on various projects to enhance my portfolio and showcase my abilities. I believe in the power of collaboration and I'am always open to new opportunities. Feel free to reach out if you'd like to connect or collaborate on a project!
-</p>
-  </div>
-</section>
+      <h2>About Me</h2>
+      <div>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+        <p style="font-size: 20px;">Hello! I'm Gerard Cordovez, a simple web developer. I have a passion for creating beautiful and functional websites. I enjoy learning new technologies and improving my skills in web development.
+        I am currently working on various projects to enhance my portfolio and showcase my abilities. I believe in the power of collaboration and I am always open to new opportunities. Feel free to reach out if you'd like to connect or collaborate on a project!</p>
+      </div>
+    </section>
 
     <section id="skills">
-  <h2>Skills</h2>
-  <ul class="skills-list">
-    <li>💻 HTML & CSS</li>
-    <li>⚙️ JavaScript</li>
-    <li>🧠 C#</li>
-    <li>🗃️ SQL</li>
-  </ul>
-</section>
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>💻 HTML & CSS</li>
+        <li>⚙️ JavaScript</li>
+        <li>🧠 C#</li>
+        <li>🗃️ SQL</li>
+      </ul>
+    </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <div class="project">
         <h3>Project One</h3>
         <div class="project-container">
-        <img src="NetNaut.jpg" alt="NetNaut Picture" class="NetNaut-pic" />
-        <p>NetNaut: A Mobile Game on Computer Networks <br>
-The network topology is a game to connects the computer network and helps players build 
-and manage computer networks using different network topologies. Players are presented 
-with a virtual environment where they can place nodes (representing computers or other 
-network devices) and connect them using variouslinks (wired or wireless). The game allows 
-players to experiment with different network topologies, such as Star Topology all nodes 
-are connected to a central hub or switch. This topology is simple and easy to set up but can 
-be a single point of failure. Bus Topology all nodes are connected to a single communication 
-line (the bus). Nodes can communicate directly with each other, but adding more nodes can 
-lead to network congestion. Ring Topology, each node is connected to exactly two other 
-nodes, forming a circular ring. Data travels in one direction around the ring. This topology 
-is resilient but can be slow for large networks. Mesh Topology every node is connected to 
-every other node in the network. This topology provides high redundancy and fault 
-tolerance but can be complex and expensive to implement. Tree Topology nodes are 
-arranged hierarchically, with a central root node connecting to other nodes in a branching 
-structure</p>
+          <img src="NetNaut.jpg" alt="NetNaut Picture" class="NetNaut-pic" />
+          <p>NetNaut: A Mobile Game on Computer Networks <br>
+            (Project description here…)
+          </p>
         </div>
-    </div>
+      </div>
+
       <div class="project">
         <h3>Project Two</h3>
         <div class="project-container">
-        <img src="Flappy Bird.jpg" alt="Flappy Bird Picture" class="Flappy-bird-pic" />
-        <p>Goofy Bird: A Simple Game Made with C#<br>
-        Goofy Bird is a simple game made with C# that is inspired by the popular Flappy Bird game.
-        The game features a bird that the player must navigate through a series of obstacles by tapping the screen to make the bird flap its wings. 
-        The goal is to keep the bird flying and avoid hitting the obstacles, which are represented by pipes. The game keeps track of the player's score based on how many pipes they successfully pass through. 
-        The graphics are simple and colorful, making it easy for players of all ages to enjoy.</p>          
+          <img src="Flappy Bird.jpg" alt="Flappy Bird Picture" class="Flappy-bird-pic" />
+          <p>Goofy Bird: A Simple Game Made with C#<br>
+            (Project description here…)
+          </p>
+        </div>
       </div>
     </section>
+
+    <!-- 🎓 START Certificate Section -->
+    <section id="certificates">
+      <h2>Certificates</h2>
+      <div class="certificate-gallery">
+        <!-- 📝 Replace these with your actual image or PDF links -->
+        <a href="certificates/udemy-html.jpg" target="_blank">
+          <img src="certificates/udemy-html.jpg" alt="HTML Certificate" class="certificate-img" />
+        </a>
+        <a href="certificates/udemy-js.jpg" target="_blank">
+          <img src="certificates/udemy-js.jpg" alt="JavaScript Certificate" class="certificate-img" />
+        </a>
+        <!-- ➕ Add more certificates here as needed -->
+      </div>
+    </section>
+    <!-- 🎓 END Certificate Section -->
 
     <section id="contact">
       <h2>Contact Me</h2>
       <p>Email: gerardcordovez900@example.com</p>
       <p>Phone: +63 09357667368</p>
       <a href="https://github.com/Gerard1603" class="btn" target="_blank">GitHub</a>
-  <a href="https://www.facebook.com/share/176tAjxJfA/?mibextid=wwXIfr" class="btn" target="_blank">Facebook</a>
+      <a href="https://www.facebook.com/share/176tAjxJfA/?mibextid=wwXIfr" class="btn" target="_blank">Facebook</a>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Gerard's Cordovez Portfolio. All rights reserved.</p>
+    <p>&copy; 2025 Gerard Cordovez Portfolio. All rights reserved.</p>
   </footer>
 </body>
 </html>
