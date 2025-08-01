@@ -4,26 +4,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Gerard Cordovez | Portfolio</title>
   <style>
+    :root {
+      --maroon: #800000;
+      --beige: #f5f5dc;
+      --light-beige: #fff0e0;
+      --accent-hover: #a00000;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
-      font-family: Verdana;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background-color: #f5f5dc; 
-      color: #3e0f0f; 
-      font-family: 'Poppins';
+      background-color: var(--beige);
+      color: var(--maroon);
+      line-height: 1.6;
     }
 
     header {
-      background-color: #800000; 
+      background-color: var(--maroon);
       padding: 1rem 2rem;
-      color: beige;
+      color: var(--beige);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -33,21 +40,28 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: beige;
+      color: var(--beige);
       text-decoration: none;
       font-weight: bold;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       text-decoration: underline;
     }
 
@@ -61,32 +75,9 @@
 
     h2 {
       margin-bottom: 1rem;
-      border-bottom: 2px solid maroon;
+      border-bottom: 2px solid var(--maroon);
       display: inline-block;
       padding-bottom: 0.5rem;
-    }
-
-    .project {
-      background-color: #fff0e0;
-      border: 1px solid #800000;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 20px rgba(128, 0, 0, 0.3);
-      background-color: #fef5e6;
-    }
-
-    footer {
-      background-color: #800000;
-      color: beige;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
     }
 
     .profile-pic {
@@ -94,36 +85,26 @@
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #800000;
+      border: 3px solid var(--maroon);
+      margin-bottom: 1rem;
     }
 
-    .project-container {
-      display: flex;
-      align-items: center;
-      gap: 1rem; 
-    }
-
-    .NetNaut-pic,
-    .Flappy-bird-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 5%;
-      border: 3px solid #800000;
-      object-fit: cover;    
+    .about-text {
+      font-size: 1.1rem;
+      max-width: 800px;
     }
 
     .skills-list {
-      list-style: none;
-      padding-left: 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem 2rem;
-      font-size: 1.1rem;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
     }
 
     .skills-list li {
-      background-color: #fff0e0;
-      border: 1px solid #800000;
+      background-color: var(--light-beige);
+      border: 1px solid var(--maroon);
       padding: 0.5rem 1rem;
       border-radius: 6px;
       font-weight: 500;
@@ -138,26 +119,32 @@
       transform: translateY(-2px);
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 0.5rem;
-      margin-right: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #800000;
-      color: beige;
-      text-decoration: none;
+    .project {
+      background-color: var(--light-beige);
+      border: 1px solid var(--maroon);
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(128, 0, 0, 0.3);
+    }
+
+    .project-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-container img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
       border-radius: 6px;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .btn:hover {
-      background-color: #a00000;
-      transform: scale(1.05);
-    }
-
-    /* 🎓 Certificates section styling */
-    #certificates {
-      margin-bottom: 3rem;
+      border: 3px solid var(--maroon);
     }
 
     .certificate-gallery {
@@ -168,8 +155,7 @@
 
     .certificate-img {
       width: 250px;
-      height: auto;
-      border: 2px solid #800000;
+      border: 2px solid var(--maroon);
       border-radius: 8px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -178,32 +164,76 @@
       transform: scale(1.05);
       box-shadow: 0 4px 20px rgba(128, 0, 0, 0.3);
     }
+
+    .btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--maroon);
+      color: var(--beige);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: var(--maroon);
+      color: var(--beige);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Responsive layout */
+    @media (min-width: 768px) {
+      .project-container {
+        flex-direction: row;
+      }
+
+      .about-flex {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <nav>
-      <h1>Cordovez Portfolio</h1>
+      <h1>My Portfolio</h1>
       <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about" class="active">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#certificates">Certificates</a></li> <!-- 🔥 Added Certificates nav link -->
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+
+    <!-- ✏️ About Section -->
     <section id="about">
       <h2>About Me</h2>
-      <div>
+      <div class="about-flex">
         <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
-        <p style="font-size: 20px;">Hello! I'm Gerard Cordovez, a simple web developer. I have a passion for creating beautiful and functional websites. I enjoy learning new technologies and improving my skills in web development.
-        I am currently working on various projects to enhance my portfolio and showcase my abilities. I believe in the power of collaboration and I am always open to new opportunities. Feel free to reach out if you'd like to connect or collaborate on a project!</p>
+        <p class="about-text">
+          Hello! I'm Gerard Cordovez, a simple programmer. I have a hobby for creating beautiful and functional websites. I enjoy learning new technologies and improving my skills in web development.
+          <br><br>
+          I am currently working on various projects to enhance my portfolio and showcase my abilities. I believe in the power of collaboration and I am always open to new opportunities. Feel free to reach out!
+        </p>
       </div>
     </section>
 
+    <!-- ✏️ Skills Section -->
     <section id="skills">
       <h2>Skills</h2>
       <ul class="skills-list">
@@ -214,43 +244,59 @@
       </ul>
     </section>
 
+    <!-- ✏️ Projects Section -->
     <section id="projects">
       <h2>Projects</h2>
+
       <div class="project">
-        <h3>Project One</h3>
+        <h3>NetNaut: A Mobile Game on Computer Networks</h3>
         <div class="project-container">
-          <img src="NetNaut.jpg" alt="NetNaut Picture" class="NetNaut-pic" />
-          <p>NetNaut: A Mobile Game on Computer Networks <br>
-            (Project description here…)
+          <img src="NetNaut.jpg" alt="NetNaut Picture" />
+          <p>
+            The network topology is a game to connects the computer network and helps players build 
+and manage computer networks using different network topologies. Players are presented 
+with a virtual environment where they can place nodes (representing computers or other 
+network devices) and connect them using variouslinks (wired or wireless). The game allows 
+players to experiment with different network topologies, such as Star Topology all nodes 
+are connected to a central hub or switch. This topology is simple and easy to set up but can 
+be a single point of failure. Bus Topology all nodes are connected to a single communication 
+line (the bus). Nodes can communicate directly with each other, but adding more nodes can 
+lead to network congestion. Ring Topology, each node is connected to exactly two other 
+nodes, forming a circular ring. Data travels in one direction around the ring. This topology 
+is resilient but can be slow for large networks. Mesh Topology every node is connected to 
+every other node in the network. This topology provides high redundancy and fault 
+tolerance but can be complex and expensive to implement. Tree Topology nodes are 
+arranged hierarchically, with a central root node connecting to other nodes in a branching 
+structure.
           </p>
         </div>
       </div>
 
       <div class="project">
-        <h3>Project Two</h3>
+        <h3>Goofy Bird: A Flappy Bird Clone</h3>
         <div class="project-container">
-          <img src="Flappy Bird.jpg" alt="Flappy Bird Picture" class="Flappy-bird-pic" />
-          <p>Goofy Bird: A Simple Game Made with C#<br>
-            (Project description here…)
+          <img src="Flappy Bird.jpg" alt="Flappy Bird Picture" />
+          <p>
+            Goofy Bird is a simple game made with C# that is inspired by the popular Flappy Bird game.
+        The game features a bird that the player must navigate through a series of obstacles by tapping the screen to make the bird flap its wings. 
+        The goal is to keep the bird flying and avoid hitting the obstacles, which are represented by pipes. The game keeps track of the player's score based on how many pipes they successfully pass through. 
+        The graphics are simple and colorful, making it easy for players of all ages to enjoy.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 🎓 START Certificate Section -->
+    <!-- ✏️ Certificates Section -->
     <section id="certificates">
       <h2>Certificates</h2>
       <div class="certificate-gallery">
-        <!-- 📝 Replace these with your actual image or PDF links -->
-          <img src="Intro to Git.jpg" alt="HTML Certificate" class="certificate-img" />
-        </a>
-          <img src="Git Bash for Windows.jpg" alt="JavaScript Certificate" class="certificate-img" />
-        </a>
-        <!-- ➕ Add more certificates here as needed -->
+        <img src="Intro to Git.jpg" alt="Git Certificate" class="certificate-img" />
+        <img src="Git Bash for Windows.jpg" alt="Git Bash Certificate" class="certificate-img" />
+        <!-- ➕ Add more certificate images -->
       </div>
     </section>
-    <!-- 🎓 END Certificate Section -->
 
+    <!-- ✏️ Contact Section -->
     <section id="contact">
       <h2>Contact Me</h2>
       <p>Email: gerardcordovez900@example.com</p>
@@ -263,5 +309,6 @@
   <footer>
     <p>&copy; 2025 Gerard Cordovez Portfolio. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
