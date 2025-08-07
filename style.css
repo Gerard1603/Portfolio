@@ -230,13 +230,3 @@ body.dark-mode .btn:hover {
     align-items: center;
   }
 }
-
-.certificate-img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.certificate-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
