@@ -230,3 +230,31 @@ body.dark-mode .btn:hover {
     align-items: center;
   }
 }
+
+#get-in-touch {
+  background-color: var(--light-beige);
+  padding: 2rem;
+  border: 1px solid var(--maroon);
+  border-radius: 10px;
+}
+
+#get-in-touch form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#get-in-touch label {
+  font-weight: bold;
+}
+
+#get-in-touch input,
+#get-in-touch textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--maroon);
+  border-radius: 5px;
+}
+
+#get-in-touch button {
+  align-self: flex-start;
+}
