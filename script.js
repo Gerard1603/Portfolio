@@ -8,3 +8,28 @@ function toggleDarkMode() {
     btn.textContent = "🌙 Dark Mode";
   }
 }
+
+// Certificates modal
+var certModal = document.getElementById("certModal");
+var certModalImg = document.getElementById("certModalImage");
+var certCloseBtn = certModal.getElementsByClassName("close")[0];
+
+// Open modal on certificate click
+document.querySelectorAll(".clickable-cert").forEach((cert) => {
+  cert.addEventListener("click", function () {
+    certModal.style.display = "block";
+    certModalImg.src = this.src;
+  });
+});
+
+// Close modal when clicking X
+certCloseBtn.onclick = function () {
+  certModal.style.display = "none";
+};
+
+// Close modal when clicking outside the image
+certModal.onclick = function (e) {
+  if (e.target === certModal) {
+    certModal.style.display = "none";
+  }
+};
