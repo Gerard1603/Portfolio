@@ -328,3 +328,63 @@ body.dark-mode .btn:hover {
   display: inline-block;
   margin: 10px 5px;
 }
+
+/* Udemy Projects Carousel */
+#udemy-projects {
+  margin: 40px auto;
+  max-width: 900px;
+  padding: 20px;
+  text-align: center;
+}
+
+#udemy-projects h2 {
+  margin-bottom: 20px;
+  color: var(--maroon);
+  border-bottom: 2px solid var(--maroon);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+#udemyProjectsCarousel img {
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid var(--maroon);
+}
+
+#udemyProjectsCarousel .carousel-caption {
+  font-size: 1rem;
+}
+
+#udemyProjectsCarousel .carousel-indicators button {
+  background-color: var(--maroon);
+}
+
+#udemyProjectsCarousel .carousel-control-prev-icon,
+#udemyProjectsCarousel .carousel-control-next-icon {
+  filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(340deg);
+}
+
+/* Dark Mode Styling */
+body.dark-mode #udemy-projects h2 {
+  color: #f5f5dc;
+  border-color: #f5f5dc;
+}
+
+body.dark-mode #udemyProjectsCarousel img {
+  border-color: #f5f5dc;
+}
+
+body.dark-mode #udemyProjectsCarousel .carousel-caption {
+  background-color: rgba(30, 30, 30, 0.7);
+  color: #f5f5dc;
+}
+
+body.dark-mode #udemyProjectsCarousel .carousel-indicators button {
+  background-color: #f5f5dc;
+}
+
+body.dark-mode #udemyProjectsCarousel .carousel-control-prev-icon,
+body.dark-mode #udemyProjectsCarousel .carousel-control-next-icon {
+  filter: invert(100%);
+}
