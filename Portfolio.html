@@ -19,7 +19,11 @@
     <header>
       <nav>
         <h1>My Portfolio</h1>
-        <ul>
+
+        <!-- Hamburger Menu -->
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+        <ul class="nav-links">
           <li><a href="#about" class="active">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -27,6 +31,8 @@
           <li><a href="#contact">Contact</a></li>
           <li><a href="#get-in-touch">Get in Touch</a></li>
         </ul>
+
+        <!-- Dark Mode Button -->
         <button class="toggle-btn" onclick="toggleDarkMode()">
           🌙 Dark Mode
         </button>
@@ -288,7 +294,7 @@
             <!-- Project 4 -->
             <div class="carousel-item">
               <img
-                src="images/udemy-project4.jpg"
+                src="yavin pic.png"
                 class="d-block w-100 rounded shadow"
                 alt="Udemy Project 4"
               />
@@ -342,13 +348,15 @@
         <img class="modal-content" id="certModalImage" />
       </div>
 
-      <!-- ✏️ Get in Touch Section -->
-      <section id="get-in-touch">
-        <h2>Get in Touch</h2>
+      <!-- ✏️ Contact Section -->
+      <section id="contact">
+        <h2>Contact Me</h2>
         <p>
-          If you would like to collaborate or have any questions, feel free to
-          reach out!
+          If you’d like to collaborate, ask a question, or just say hi, feel
+          free to reach out!
         </p>
+
+        <!-- Contact Form -->
         <form>
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
@@ -361,33 +369,31 @@
 
           <button type="submit" class="btn">Send Message</button>
         </form>
-      </section>
 
-      <!-- ✏️ Contact Section -->
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: gerardcordovez900@example.com</p>
-        <p>Phone: +63 09357667368</p>
+        <!-- Direct Contact Info -->
+        <div class="contact-info">
+          <p>📧 Email: gerardcordovez900@example.com</p>
+          <p>📞 Phone: +63 09357667368</p>
+        </div>
 
-        <a href="https://github.com/Gerard1603" class="btn" target="_blank">
-          🐙 GitHub
-        </a>
-
-        <a
-          href="https://www.facebook.com/share/176tAjxJfA/?mibextid=wwXIfr"
-          class="btn"
-          target="_blank"
-        >
-          📘 Facebook
-        </a>
-
-        <a
-          href="https://www.instagram.com/everyonehates_cordovez/"
-          class="btn"
-          target="_blank"
-        >
-          📚 Instagram
-        </a>
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://github.com/Gerard1603" class="btn" target="_blank"
+            >🐙 GitHub</a
+          >
+          <a
+            href="https://www.facebook.com/share/176tAjxJfA/?mibextid=wwXIfr"
+            class="btn"
+            target="_blank"
+            >📘 Facebook</a
+          >
+          <a
+            href="https://www.instagram.com/everyonehates_cordovez/"
+            class="btn"
+            target="_blank"
+            >📸 Instagram</a
+          >
+        </div>
       </section>
     </main>
 

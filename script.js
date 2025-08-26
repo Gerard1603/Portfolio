@@ -33,3 +33,13 @@ certModal.onclick = function (e) {
     certModal.style.display = "none";
   }
 };
+
+// Mobile nav toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+  // Change ☰ to ✖ when active
+  menuToggle.textContent = navLinks.classList.contains("show") ? "✖" : "☰";
+});
