@@ -43,3 +43,22 @@ menuToggle.addEventListener("click", () => {
   // Change ☰ to ✖ when active
   menuToggle.textContent = navLinks.classList.contains("show") ? "✖" : "☰";
 });
+
+// Contact Form with EmailJS
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_ozwh07a", "template_zw67gv5", this).then(
+      () => {
+        alert("✅ Message sent successfully!");
+        contactForm.reset();
+      },
+      (error) => {
+        alert("❌ Failed to send message: " + JSON.stringify(error));
+      }
+    );
+  });
+}

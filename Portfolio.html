@@ -14,6 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerard Cordovez | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("GQAxO6jqflTxgnAGs"); // Replace with your EmailJS Public Key
+      })();
+    </script>
   </head>
   <body>
     <header>
@@ -362,7 +373,7 @@
         </p>
 
         <!-- Contact Form -->
-        <form>
+        <form id="contact-form">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
 
@@ -401,6 +412,28 @@
         </div>
       </section>
     </main>
+
+    <!-- ✏️ Space Section -->
+    <section id="map">
+      <h2>My Home (Earth)</h2>
+      <div class="map-container">
+        <iframe
+          src="https://eyes.nasa.gov/apps/solar-system/#/home"
+          width="100%"
+          height="500"
+          style="border: 0"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+      <a
+        href="https://eyes.nasa.gov/apps/solar-system/#/home"
+        target="_blank"
+        class="btn"
+      >
+        🌌 Open Fullscreen
+      </a>
+    </section>
 
     <footer>
       <p>&copy; 2025 Gerard Cordovez Portfolio. All rights reserved.</p>
