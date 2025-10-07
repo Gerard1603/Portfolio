@@ -15,14 +15,16 @@
     <title>Gerard Cordovez | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
 
-    <!-- EmailJS SDK -->
+    <!-- ✅ EmailJS SDK -->
     <script
       type="text/javascript"
-      src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
     <script type="text/javascript">
       (function () {
-        emailjs.init("GQAxO6jqflTxgnAGs"); // Replace with your EmailJS Public Key
+        emailjs.init({
+          publicKey: "ggXSshGSHib54J6tk",
+        });
       })();
     </script>
   </head>

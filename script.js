@@ -44,21 +44,22 @@ menuToggle.addEventListener("click", () => {
   menuToggle.textContent = navLinks.classList.contains("show") ? "✖" : "☰";
 });
 
-// Contact Form with EmailJS
-const contactForm = document.getElementById("contact-form");
+window.addEventListener("load", () => {
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    emailjs.sendForm("service_ozwh07a", "template_zw67gv5", this).then(
-      () => {
-        alert("✅ Message sent successfully!");
-        contactForm.reset();
-      },
-      (error) => {
-        alert("❌ Failed to send message: " + JSON.stringify(error));
-      }
-    );
-  });
-}
+      emailjs.sendForm("service_ozwh07a", "template_zw67gv5", this).then(
+        function () {
+          alert("✅ Message sent successfully!");
+          contactForm.reset();
+        },
+        function (error) {
+          alert("❌ Failed to send message. Check console for details.");
+          console.error(error);
+        }
+      );
+    });
+  }
+});
